@@ -13,38 +13,38 @@ MonoBehaviour:
   m_Name: EasyFeedbackConfig
   m_EditorClassIdentifier: 
   StoreLocal: 0
-  Token: ATTA18f319ad961a761c5cf02695042720374b740704b49715dffbe39ba5e9b05cb59F628658
+  Token: ATTA678de46b8a0b9cbfb0e4f6ffe56bf025720723f3440ff422939033e788c13aa3BD18A717
   Board:
-    Id: 6414199380b13092ca8a861a
+    Id: 641bff027c1ca94970434759
     ListNames:
     - Feedback (EF)
     - Bugs (EF)
     - Resolved
     ListIds:
-    - 6414199380b13092ca8a8621
-    - 6414199380b13092ca8a8622
-    - 6414199380b13092ca8a8623
+    - 641bff027c1ca94970434760
+    - 641bff027c1ca94970434761
+    - 641bff027c1ca94970434762
     CategoryNames:
     - 'Feedback '
     - 'Bugs '
     CategoryIds:
-    - 6414199380b13092ca8a8621
-    - 6414199380b13092ca8a8622
+    - 641bff027c1ca94970434760
+    - 641bff027c1ca94970434761
     Labels:
-    - id: 6414199380b13092ca8a8635
-      idBoard: 6414199380b13092ca8a861a
+    - id: 641bff027c1ca94970434774
+      idBoard: 641bff027c1ca94970434759
       name: Low Priority
       color: green
       uses: 0
       order: 0
-    - id: 6414199380b13092ca8a8638
-      idBoard: 6414199380b13092ca8a861a
+    - id: 641bff027c1ca94970434777
+      idBoard: 641bff027c1ca94970434759
       name: Medium Priority
       color: yellow
       uses: 0
       order: 0
-    - id: 6414199380b13092ca8a863b
-      idBoard: 6414199380b13092ca8a861a
+    - id: 641bff027c1ca9497043477a
+      idBoard: 641bff027c1ca94970434759
       name: High Priority
       color: red
       uses: 0
