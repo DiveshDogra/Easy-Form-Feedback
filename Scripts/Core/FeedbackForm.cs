@@ -352,6 +352,25 @@ namespace AeLa.EasyFeedback
             Cursor.lockState = initCursorLockMode;
         }
 
+        public Texture2D DeCompress(Texture2D source)
+        {
+            RenderTexture renderTex = RenderTexture.GetTemporary(
+                        source.width,
+                        source.height,
+                        0,
+                        RenderTextureFormat.Default,
+                        RenderTextureReadWrite.Linear);
+
+            Graphics.Blit(source, renderTex);
+            RenderTexture previous = RenderTexture.active;
+            RenderTexture.active = renderTex;
+            Texture2D readableText = new Texture2D(source.width, source.height);
+            readableText.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
+            readableText.Apply();
+            RenderTexture.active = previous;
+            RenderTexture.ReleaseTemporary(renderTex);
+            return readableText;
+        }
         private IEnumerator ScreenshotAndOpenForm()
         {
             if (IncludeScreenshot)
@@ -363,12 +382,14 @@ namespace AeLa.EasyFeedback
                 var tex = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
                 tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
 	            tex.Apply();
+                tex.Compress();
                 
                 if (ResizeLargeScreenshots && (tex.width ^ 2 * tex.height ^ 2) > BIG_TEX)
                 {
 	                // resize so largest dimension is <= 1080p
 	                tex.Scale(TEX_DIMENSION_MAX / Mathf.Max(tex.width, tex.height));
                 }
+                DeCompress(tex)
                 
                 CurrentReport.AttachFile("screenshot.png", tex.EncodeToPNG());
             }
