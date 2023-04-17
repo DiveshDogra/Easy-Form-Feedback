@@ -389,7 +389,7 @@ namespace AeLa.EasyFeedback
 	                // resize so largest dimension is <= 1080p
 	                tex.Scale(TEX_DIMENSION_MAX / Mathf.Max(tex.width, tex.height));
                 }
-                DeCompress(tex)
+                DeCompress(tex);
                 
                 CurrentReport.AttachFile("screenshot.png", tex.EncodeToPNG());
             }
