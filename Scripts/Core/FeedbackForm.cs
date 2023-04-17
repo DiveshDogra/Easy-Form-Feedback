@@ -11,8 +11,8 @@ namespace AeLa.EasyFeedback
 {
     public class FeedbackForm : MonoBehaviour
     {
-	    private const int BIG_TEX = 2040;
-	    private const float TEX_DIMENSION_MAX = 1080;
+	    private const int BIG_TEX = 1080;
+	    private const float TEX_DIMENSION_MAX = 480;
 	    
         [Tooltip("Easy Feedback configuration file")]
         public EFConfig Config;
