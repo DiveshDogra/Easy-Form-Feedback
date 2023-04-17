@@ -360,7 +360,7 @@ namespace AeLa.EasyFeedback
 	            // see: https://answers.unity.com/questions/1655518/screencapturecapturescreenshotastexture-is-making.html
 	            yield return new WaitForEndOfFrame();
 	            
-                var tex = new Texture2D(Screen.width, Screen.height, TextureFormat.ASTC_4x4, false);
+                var tex = new Texture2D(Screen.width, Screen.height, TextureFormat.ARGB16, false);
                 tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
 	            tex.Apply();
                 
