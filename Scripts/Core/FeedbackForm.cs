@@ -382,7 +382,6 @@ namespace AeLa.EasyFeedback
                 var tex = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
                 tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
 	            tex.Apply();
-                tex.Compress();
                 
                 if (ResizeLargeScreenshots && (tex.width ^ 2 * tex.height ^ 2) > BIG_TEX)
                 {
